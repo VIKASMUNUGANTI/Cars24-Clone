@@ -232,43 +232,52 @@
     font-family: var(--font);
     font-weight: 700;
 }
-
-.our-sevices{
-    width: 67%;
+/* ========================================================   Our Services   ======================================================= */
+/* ========================================================   Our Services   ======================================================= */
+/* ========================================================   Our Services   ======================================================= */
+/* ========================================================   Our Services   ======================================================= */
+.our-sevices {
+    width: 66%;
     margin: auto;
-    border: 1px solid;
     margin-top: 40px;
-    display: flex;
+    overflow: hidden;
 }
-.slider{
-    width: 650%;
-    height: 500px;
-    overflow: visible;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.h2{
+
+/* TITLE */
+.h2 {
     margin-top: 100px;
     margin-left: 250px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
     font-family: var(--font);
     font-size: 28px;
 }
-.services-card{
-    width: 33%;
+
+/* SLIDER */
+.slider {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;          /* enables horizontal scroll */
+    padding-bottom: 10px;
+}
+
+/* CARD */
+.services-card {
+    flex: 0 0 calc(32% - 5px);   /* only 3 visible */
     border-radius: 16px;
     display: flex;
     flex-direction: column;
 }
-.card-1{
-    background: rgb(8, 74, 118);
-    
-}
-.card-2{
-    background: rgb(4, 99, 240);
-}
-.services-card .card-img img{
+
+/* COLORS */
+.card-1 { background: rgb(8, 74, 118); }
+.card-2 { background: rgb(4, 99, 240); }
+.card-3 { background: rgb(29, 47, 73); }
+.card-4 { background: rgb(239, 110, 11); }
+.card-5 { background: rgb(4, 99, 240); }
+.card-6 { background: rgb(86, 72, 251); }
+
+/* IMAGE */
+.services-card .card-img img {
     width: 100%;
     border-radius: 16px;
     border-bottom-left-radius: 45%;
@@ -276,16 +285,20 @@
     position: relative;
     z-index: 4;
 }
-.card-shades{
+
+/* SHADE */
+.card-shades {
     position: relative;
-    z-index:3;
+    z-index: 3;
     margin-top: -110px;
 }
-.card-shades img{
+
+.card-shades img {
     width: 100%;
 }
 
-.card-content{
+/* CONTENT */
+.card-content {
     margin-top: -50px;
     color: white;
     font-family: var(--font);
@@ -293,43 +306,46 @@
     flex-direction: column;
     margin-left: 10px;
 }
-.qualities{
+
+/* QUALITIES */
+.qualities {
     display: flex;
 }
-.inner-qualities{
+
+.inner-qualities {
     display: flex;
     font-size: 12px;
-    justify-content: space-around;
     gap: 10px;
     margin-bottom: 25px;
 }
-.inner-qualities p{
-    margin-right: 5px;
-}
-.inner-qualities img{
+
+.inner-qualities img {
     width: 22px;
     height: 22px;
 }
-.heading p{
+
+/* TEXT */
+.heading p {
     font-size: 16px;
-    line-height: 20px;
     margin-bottom: 15px;
 }
-.quote p{
+
+.quote p {
     display: flex;
     align-items: center;
     height: 70px;
     font-size: 20px;
     font-weight: 600;
 }
-.card-button button{
+
+/* BUTTON */
+.card-button button {
     width: 95%;
-    text-align: center;
     padding: 8px 16px;
     font-family: var(--font);
-    border-radius: 8px ;
+    border-radius: 8px;
     border: none;
-    background: linear-gradient(242deg, rgba(194, 232, 255, 0.2) 48.96%, rgba(194, 232, 255, 0.2) 48.96%);
+    background: linear-gradient(242deg, rgba(194, 232, 255, 0.2), rgba(194, 232, 255, 0.2));
     color: white;
     font-size: 16px;
     margin-bottom: 10px;
