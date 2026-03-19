@@ -109,6 +109,10 @@
     margin-right: 12px;
 }
 
+.Account{
+    display: flex;
+    gap: 3px;
+}
 
 /* ===================================================  Main Banner =========================================================== */
 /* ===================================================  Main Banner =========================================================== */
@@ -174,7 +178,7 @@
     justify-content: center;
  }
 .logo-car a:hover{
-    color: orange;
+    color: #ef6e0b;
 }
  .search-bar{
     display: flex;
@@ -188,8 +192,8 @@
     transition: 0.5s;
  }
  .search-bar:focus-within {
-    border: 1px solid rgb(182, 20, 20);
-    box-shadow: 0 0 10px 1px rgba(230, 24, 24, 0.714);
+    border: 1px solid #ef6e0b;
+    box-shadow: 0 0 1px 1px #ef6e0b;
 }
  .search-bar input{
     font-weight: 500;
@@ -223,7 +227,7 @@
 .brands button{
     background-color: #ef6e0b;
     padding: 12px 26px;
-    width: 150px;
+    width: 160px;
     color: white;
     border: none;
     outline: none;
@@ -231,6 +235,11 @@
     font-size: 16px;
     font-family: var(--font);
     font-weight: 700;
+}
+
+.logo-car a:hover .info span{
+    color: #ef6e0b;
+    font-weight:550;
 }
 /* ========================================================   Our Services   ======================================================= */
 /* ========================================================   Our Services   ======================================================= */
@@ -255,14 +264,14 @@
 /* SLIDER */
 .slider {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     overflow-x: auto;          /* enables horizontal scroll */
     padding-bottom: 10px;
 }
 
 /* CARD */
 .services-card {
-    flex: 0 0 calc(32% - 5px);   /* only 3 visible */
+    flex: 0 0 calc(31% - 5px);   /* only 3 visible */
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -355,6 +364,11 @@
     display: none;
 }
 
+/* ===================================================   Cars by Category ================================================ */
+/* ===================================================   Cars by Category ================================================ */
+/* ===================================================   Cars by Category ================================================ */
+/* ===================================================   Cars by Category ================================================ */
+
 .cars-by-category{
     width: 67%;
     margin: auto;
@@ -380,6 +394,7 @@
     border: 1px solid #d6d6d6;
     text-align: left;
     cursor: pointer;
+    background-color: #fff;
 }
 
 .buttons button.active {
@@ -394,4 +409,77 @@
 
 .tab-content.active {
     display: block;
+}
+
+.category-content img{
+    width: 125px;
+    height: 60px;
+}
+.content-card{
+    display: flex;
+    justify-content: flex-start;
+    gap: 35px;
+}
+.content-img{
+    width: 200px;
+    height: 150px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    row-gap: 20px;
+    font-family: var(--font);
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 12px;
+    border: none;
+}
+
+
+
+.slider-2 {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.slider-2::-webkit-scrollbar {
+    display: none;
+}
+.price-crad {
+    height: 75px;
+    flex: 0 0 calc(25% - 5px);   
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    /* padding: 10px 15px; */
+    align-items: center;
+    /* border: 1px solid; */
+    font-family: var(--font);
+    font-size: 18px;
+    font-weight: 600;
+}
+.fuel-logo{
+    display: flex;
+    justify-content: space-around;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid; */
+    padding: 30px 60px;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 16px;
+    background-color: #fff;
+}
+.logo img{
+    width: 50px;
+    height: 50px;
 }
