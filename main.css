@@ -351,3 +351,47 @@
     margin-bottom: 10px;
 }
 
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.cars-by-category{
+    width: 67%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, #e5f3ff, #fff);
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.buttons div{
+    width: 30%;
+}
+.buttons button{
+    width: 100%;
+    padding: 8px 40px;
+    border-radius: 64px;
+    font-family: var(--font);
+    font-size: 20px;
+    border: 1px solid #d6d6d6;
+    text-align: left;
+    cursor: pointer;
+}
+
+.buttons button.active {
+    background: #cfe3ff;
+    border-color: #3b82f6;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px 10px;
+}
+
+.tab-content.active {
+    display: block;
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    
 </head>
 
 <body>
@@ -249,7 +250,7 @@
                     </div>
                 </div>
             </div>
-            <div class="services-card card-2"> 
+            <div class="services-card card-2">
                 <div class="card-img"><img src="./assets/loans24-card.png" alt=""></div>
                 <div class="card-shades"><img
                         src="https://assets.cars24.com/production/india-website/catalog/260316082336/_next/static/media/gradient.0a53f87d.svg"
@@ -335,7 +336,7 @@
                     </div>
                 </div>
             </div>
-            <div class="services-card card-4"> 
+            <div class="services-card card-4">
                 <div class="card-img"><img src="./assets/sell-cars-card.webp" alt=""></div>
                 <div class="card-shades"><img
                         src="https://assets.cars24.com/production/india-website/catalog/260316082336/_next/static/media/gradient.0a53f87d.svg"
@@ -421,7 +422,7 @@
                     </div>
                 </div>
             </div>
-            <div class="services-card card-6"> 
+            <div class="services-card card-6">
                 <div class="card-img"><img src="./assets/scrap-car-card.webp" alt=""></div>
                 <div class="card-shades"><img
                         src="https://assets.cars24.com/production/india-website/catalog/260316082336/_next/static/media/gradient.0a53f87d.svg"
@@ -467,6 +468,32 @@
         </div>
 
     </div>
+
+    <!-- =============  Cars by category  ================= -->
+
+    <h2 class="h2">Cars by category</h2>
+    <div class="cars-by-category">
+        <div class="buttons">
+            <div><button onclick="showTab('body' ,this)" class="but-1 active">Body type</button></div>
+            <div><button onclick="showTab('budget' ,this)" class="but-2">Car budget</button></div>
+            <div><button onclick="showTab('fuel' ,this)" class="but-3">Fuel type</button></div>
+        </div>
+        <div>
+            <div id="body" class="tab-content active">
+                <p>Hatchback | SUV | Sedan</p>
+            </div>
+
+            <div id="budget" class="tab-content">
+                <p>Under 5L | 5L–10L | 10L+</p>
+            </div>
+
+            <div id="fuel" class="tab-content">
+                <p>Petrol | Diesel | Electric</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
