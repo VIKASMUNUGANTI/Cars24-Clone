@@ -255,7 +255,7 @@
 /* TITLE */
 .h2 {
     margin-top: 100px;
-    margin-left: 250px;
+    margin-left: 260px;
     margin-bottom: 0px;
     font-family: var(--font);
     font-size: 28px;
@@ -482,4 +482,12 @@
 .logo img{
     width: 50px;
     height: 50px;
+}
+
+
+.autoverse-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
 }
