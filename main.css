@@ -609,3 +609,110 @@
     margin: auto;
     display: block;
 }
+
+
+/* ====================================================  Download App =================================================== */
+/* ====================================================  Download App =================================================== */
+/* ====================================================  Download App =================================================== */
+/* ====================================================  Download App =================================================== */
+
+.Download{
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 30px;
+    width: 67%;
+    padding: 30px;
+    border: 1px solid rgb(212, 212, 212);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font);
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.right img{
+    position: relative;
+    top: 80px;
+}
+.Download p{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.left-top{
+    margin-bottom: 20px;
+}
+.right img{
+    width: 325px;
+    height: 255px;
+}
+.App-link{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: start;
+}
+
+.mobile-number{
+    border: 1px solid gray;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border-radius: 10px;
+    
+}
+.mobile-number span{
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.mobile-number .india{
+    background-color: rgb(224, 224, 224);
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.mobile-number input{
+    font-size: 30px;
+    padding: 5px;
+    padding-left: 15px;
+    font-weight: 550;
+    width:80%;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+.mobile-number input:focus{
+    border: none;
+    outline: none;
+}
+.mobile-number input::placeholder {
+    font-size: 30px;
+    padding-left: 0px;
+    font-weight: 550;
+    color: rgb(229, 229, 229);
+}
+.download-logo{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.playstore img{
+    width: 136px;
+    height: 40px;
+}
+.qrcode img{
+    height: 94px;
+    width: 94px;
+}
+
+.App-link button{
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(200, 199, 199);
+}
