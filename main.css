@@ -620,7 +620,7 @@
     margin: auto;
     margin-top: 25px;
     border-radius: 30px;
-    width: 67%;
+    width: 63%;
     padding: 30px;
     border: 1px solid rgb(212, 212, 212);
     display: flex;
@@ -635,7 +635,7 @@
 }
 .Download p{
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 450;
     margin-bottom: 15px;
 }
 .left-top{
@@ -716,3 +716,122 @@
     font-weight: 600;
     color: rgb(200, 199, 199);
 }
+
+/* ==================================================  Motivate Us  ========================================================== */
+/* ==================================================  Motivate Us  ========================================================== */
+/* ==================================================  Motivate Us  ========================================================== */
+/* ==================================================  Motivate Us  ========================================================== */
+
+
+.Motivate{
+    width: 64%;
+    margin: auto;
+    margin-top: 25px;
+    font-family: var(--font);
+    border: none;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.rating{
+    width: 20%;
+    border: none;
+}
+.rating span{
+    font-size: 27px;
+    font-weight: 600;
+    color: #2f57b5;
+    
+}
+.rating p{
+    margin:20px 0px;
+    font-size: 21px;
+    font-weight:650 ;
+}
+.rating img{
+    margin-bottom: 10px;
+}
+
+.reviews{
+    width: 78%;
+}
+.slider-4{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;          
+    padding-bottom: 10px;
+}
+
+.reviw-card{
+    flex: 0 0 calc(40% - 5px);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    background: linear-gradient(to top, #ffffff, #eef5fe);
+}
+
+.reviewer{
+    display: flex;
+    align-items: center;
+    font-weight: 650;
+    gap: 15px;
+    font-size: 16px;
+}
+.reviewer img{
+    width: 40px;
+}
+.user-review p {
+    line-height: 28px;
+}
+.posted-date span{
+    font-size: 12px;
+    color: gray;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+/*  ==================================================   Need Help   ============================================================ */
+/*  ==================================================   Need Help   ============================================================ */
+/*  ==================================================   Need Help   ============================================================ */
+/*  ==================================================   Need Help   ============================================================ */
+
+.feedback{
+    width: 67%;
+    margin: auto;
+    margin-top: 10px;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 25px;
+}
+.fd{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 27%;
+    border: none;
+    background-color: #eeeeee;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: var(--font);
+}
+.fd span{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.fd p{
+    font-size: 12px;
+    color: gray;
+}
+.fd .fd-img{
+    display: flex;
+    align-items: center;
+}
+
