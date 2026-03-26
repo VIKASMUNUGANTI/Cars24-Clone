@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            color: rgb(0, 0, 0);
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://static-cdn.cars24.com/prod/auto-news24-cms/cars24-blog-images/2025/10/07/14f30c14-f8e0-40d7-8ff0-338067e9f7d3-orm-4-used-car.webp') center/cover no-repeat;
+            filter: blur(8px);
+            transform: scale(1.1);
+            z-index: -1;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal */
+        .modal {
+            width: 1000px;
+            height: 500px;
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* LEFT */
+        .modal-left {
+            width: 50%;
+            position: relative;
+        }
+
+        .modal-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .left-content {
+            position: absolute;
+            top: 30%;
+            left: 20px;
+            color: #fff;
+        }
+
+        .left-content h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* RIGHT */
+        .modal-right {
+            width: 50%;
+            padding: 30px;
+            position: relative;
+        }
+        .modal-right a{
+            text-decoration: none;
+            color: red;
+        }
+        .modal-right span a:hover{
+            background-color: red;
+            color: white;
+            border: 1px solid;
+        }
+        .CONTACT {
+            margin-top: 40px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Text */
+        .modal-right h2 {
+            margin-bottom: 20px;
+        }
+
+        .modal-right span {
+            color: #555;
+            font-weight: 400;
+        }
+
+        /* Input */
+        .modal-right input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin: 10px 0 20px;
+        }
+
+        /* WhatsApp */
+        .whatsapp {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .mobile-number {
+            border: 1px solid rgb(208, 208, 208);
+            height: min-content;
+            display: flex;
+            align-items: center;
+            width: 300px;
+            border-radius: 10px;
+            padding: 8px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .mobile-number .number input {
+            margin: 0px;
+            border: none;
+            padding: 10px;
+        }
+
+        .mobile-number input::placeholder {
+            font-size: 18px;
+            font-weight: 550;
+            color: rgb(229, 229, 229);
+        }
+
+        .mobile-number input:focus {
+            outline: none;
+        }
+
+        .mobile-number span {
+            font-size: 16px;
+            font-weight: 550;
+        }
+
+        /* Button */
+        .modal-right button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: #ddd;
+            color: #888;
+            font-weight: bold;
+            cursor: not-allowed;
+        }
+
+        /* Terms */
+        .terms {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .modal {
+                flex-direction: column;
+                width: 90%;
+                height: auto;
+            }
+
+            .modal-left,
+            .modal-right {
+                width: 100%;
+                height: 200px;
+            }
+
+            .modal-right {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Overlay -->
+    <div class="overlay">
+
+        <!-- Modal -->
+        <div class="modal">
+
+            <!-- LEFT SIDE -->
+            <div class="modal-left">
+                <img src="https://assets.cars24.com/production/india-website/catalog/260324174724/_next/static/media/car-bg.13e8f83d.png"
+                    alt="cars">
+
+                <div class="left-content">
+                    <h1>A whole new <br> world of Cars</h1>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="modal-right">
+                <span class="close"><a href="main.html">&times;</a></span>
+
+                <h2>Log in <br> <span>to continue</span></h2>
+                <div class="CONTACT">
+                    <label>Mobile number</label>
+                    <div class="mobile-number">
+                        <span class="india">+91 - </span>
+                        <span class="number"><input type="tel" placeholder="999 999 9999"></span>
+                    </div>
+                </div>
+                <div class="whatsapp">
+                    <p>Get instant updates from Cars24 on your WhatsApp</p>
+                    <input type="checkbox">
+
+                </div>
+
+                <button disabled>GET OTP</button>
+
+                <p class="terms">
+                    By logging in, you agree to Cars24's <br>
+                    Privacy Policy and Terms & Conditions
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
