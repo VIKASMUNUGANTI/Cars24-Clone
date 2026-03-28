@@ -1,45 +1,51 @@
-*{
+* {
     margin: 0px;
 }
-:root{
-    --font:'Inter', sans-serif;
+
+:root {
+    --font: 'Inter', sans-serif;
 }
-body{
+
+body {
     animation-name: body-opacity;
     animation-duration: 3s;
 }
+
 @keyframes body-opacity {
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
-.navbar{
+
+.navbar {
     display: flex;
     height: 80px;
-    max-width:100%;
-    justify-content:space-between;
+    max-width: 100%;
+    justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
     flex-wrap: wrap;
     position: sticky;
     top: 0px;
-    z-index:10;
+    z-index: 10;
     background: white;
     backdrop-filter: blur(15px);
     animation-name: delay-nav;
     animation-duration: 2s;
 }
 
-.right-nav-part{
+.right-nav-part {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-.left-nav-part{
+
+.left-nav-part {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +54,8 @@ body{
     margin-right: 50px;
     font-family: var(--font);
 }
-.mainlogo img{
+
+.mainlogo img {
     width: 80px;
     height: 39px;
     margin-right: 20px;
@@ -56,21 +63,24 @@ body{
 }
 
 @keyframes delay-nav {
-    0%{
+    0% {
         transform: translateY(-100px);
     }
-    100%{
+
+    100% {
         transform: translateY(0px);
     }
 }
-.location div{
+
+.location div {
     display: flex;
     height: 46px;
     align-items: center;
     gap: 8px;
     flex-wrap: wrap;
 }
-.location{
+
+.location {
     border: none;
     padding: 0px 12px;
     border-radius: 8px;
@@ -79,7 +89,8 @@ body{
     font-weight: 500;
     font-size: 14px;
 }
-.navbar .main-nav ul{
+
+.navbar .main-nav ul {
     display: flex;
     height: 60px;
     list-style: none;
@@ -91,7 +102,7 @@ body{
     line-height: 1px;
 }
 
-.main-nav ul li{
+.main-nav ul li {
     display: flex;
     height: 60px;
     align-items: center;
@@ -100,19 +111,22 @@ body{
     font-weight: 500;
     color: #333;
     flex-wrap: wrap;
-    font-family:var(--font);
+    font-family: var(--font);
     margin-right: 22px;
-    
+
 }
-.main-nav ul li img{
+
+.main-nav ul li img {
     align-items: center;
 }
-.call-button{
+
+.call-button {
     padding-right: 16px;
     margin-right: 16px;
     border-right: 1px solid rgb(199, 192, 192);
 }
-.call-button button{
+
+.call-button button {
     width: 100px;
     height: 36px;
     display: flex;
@@ -127,7 +141,8 @@ body{
     flex-wrap: wrap;
     font-family: var(--font);
 }
-.signin a{
+
+.signin a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,11 +150,12 @@ body{
     text-decoration: none;
     color: black;
 }
-.signin div img{
+
+.signin div img {
     margin-right: 12px;
 }
 
-.Account{
+.Account {
     display: flex;
     gap: 3px;
 }
@@ -151,41 +167,50 @@ body{
 /* ===================================================  Main Banner =========================================================== */
 
 
-.container .banner{
+.container .banner {
     background-image: url(https://media.cars24.com/india/cms/prod/banners/root/2026/03/26/811953d5-0d20-4a7c-a320-3781e8457179-homepage-desktop.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     height: 500px;
     animation-name: container-motion;
     animation-duration: 1s;
 }
+.container .banner video{
+    z-index: -963;
+}
+
 @keyframes banner-opacity {
 
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
-    
+
 }
-.container .content{
+
+.container .content {
     animation-name: container-motion;
     animation-duration: 1.5s;
 }
+
 @keyframes container-motion {
 
-    0%{
+    0% {
         opacity: 0;
         transform: translateY(500px);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0px);
-    }   
+    }
 }
-.container .content{
+
+.container .content {
     width: 60%;
     margin: auto;
     min-height: 240px;
@@ -194,22 +219,26 @@ body{
     border: none;
     margin-top: -210px;
     background-color: #fff;
+    z-index: 963;
     padding: 24px 56px;
     gap: 24px;
     display: flex;
     flex-direction: column;
     justify-content: start;
 }
+
 .container .content .car-info {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     border: none;
     align-items: center;
 }
-.logo-car{
+
+.logo-car {
     height: 100%;
 }
-.container .content .car-info .logo-car a{
+
+.container .content .car-info .logo-car a {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -225,19 +254,22 @@ body{
     height: 87px;
 }
 
-.logo-car a .image img{
+.logo-car a .image img {
     width: 44px;
     height: 44px;
 }
- .logo-car a .info{
+
+.logo-car a .info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
- }
-.logo-car a:hover{
+}
+
+.logo-car a:hover {
     color: #ef6e0b;
 }
- .search-bar{
+
+.search-bar {
     display: flex;
     border: none;
     align-items: center;
@@ -249,52 +281,57 @@ body{
     transition: 0.5s;
     animation-name: search-bar-motion;
     animation-duration: 3s;
- }
+}
 
- @keyframes search-bar-motion {
-    0%{
+@keyframes search-bar-motion {
+    0% {
         opacity: 0;
         transform: translateY(150px);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0px);
     }
- }
- .search-bar:focus-within {
+}
+
+.search-bar:focus-within {
     border: 1px solid #ef6e0b;
     box-shadow: 0 0 1px 1px #ef6e0b;
 }
- .search-bar input{
+
+.search-bar input {
     font-weight: 500;
     font-size: 16px;
     width: 750px;
     border: none;
     outline: none;
- }
- .search-bar input:focus::placeholder {
-  opacity: 0;
- }
+}
 
- .search-bar i{
+.search-bar input:focus::placeholder {
+    opacity: 0;
+}
+
+.search-bar i {
     margin-right: 15px;
- }
+}
 
-.brands{
+.brands {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     animation-name: search-bar-motion;
     animation-duration: 3s;
-    
+
 }
 
-.brand-logo img{
+.brand-logo img {
     width: 64px;
     height: 48px;
 }
-.brand-logo{
+
+.brand-logo {
     background-color: rgb(250, 250, 250);
     border-radius: 12px;
     animation-name: brand-animation;
@@ -303,15 +340,17 @@ body{
 }
 
 @keyframes brand-animation {
-    0%{
+    0% {
         transform: rotateY(0deg) translateY(150px);
     }
-    100%{
+
+    100% {
         transform: rotateY(720deg) translateY(0px);
     }
 
 }
-.brands button{
+
+.brands button {
     background-color: #ef6e0b;
     padding: 12px 26px;
     width: 160px;
@@ -323,29 +362,64 @@ body{
     font-family: var(--font);
     font-weight: 700;
 }
+
 .brand-logo:hover {
     transform: rotateX(360deg) scale(1.5);
     cursor: pointer;
 }
-.logo-car a:hover .info span{
+
+.logo-car a:hover .info span {
     color: #ef6e0b;
-    font-weight:550;
+    font-weight: 550;
 }
-.car-1{ animation-name: car-logo-delay; animation-duration: 2s; }
-.car-2{ animation-name: car-logo-delay; animation-duration: 2.2s; }
-.car-3{ animation-name: car-logo-delay; animation-duration: 2.4s; }
-.car-4{ animation-name: car-logo-delay; animation-duration: 2.6s; }
-.car-5{ animation-name: car-logo-delay; animation-duration: 2.8s; }
-.car-6{ animation-name: car-logo-delay; animation-duration: 3s; }
-.car-7{ animation-name: car-logo-delay; animation-duration: 3.2s; }
-.car-8{ animation-name: car-logo-delay; animation-duration: 3.4s; }
+
+.car-1 {
+    animation-name: car-logo-delay;
+    animation-duration: 2s;
+}
+
+.car-2 {
+    animation-name: car-logo-delay;
+    animation-duration: 2.2s;
+}
+
+.car-3 {
+    animation-name: car-logo-delay;
+    animation-duration: 2.4s;
+}
+
+.car-4 {
+    animation-name: car-logo-delay;
+    animation-duration: 2.6s;
+}
+
+.car-5 {
+    animation-name: car-logo-delay;
+    animation-duration: 2.8s;
+}
+
+.car-6 {
+    animation-name: car-logo-delay;
+    animation-duration: 3s;
+}
+
+.car-7 {
+    animation-name: car-logo-delay;
+    animation-duration: 3.2s;
+}
+
+.car-8 {
+    animation-name: car-logo-delay;
+    animation-duration: 3.4s;
+}
 
 
 @keyframes car-logo-delay {
-    0%{
+    0% {
         transform: translateX(1500px);
     }
-    100%{
+
+    100% {
         transform: translateX(0px);
     }
 }
@@ -375,34 +449,55 @@ body{
 .slider {
     display: flex;
     gap: 20px;
-    overflow-x: auto;          /* enables horizontal scroll */
+    overflow-x: auto;
+    /* enables horizontal scroll */
     padding-bottom: 10px;
 }
 
 /* CARD */
 .services-card {
-    flex: 0 0 calc(31% - 5px);   /* only 3 visible */
+    flex: 0 0 calc(31% - 5px);
+    /* only 3 visible */
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: 1.5s;
 }
-.services-card:hover{
+
+.services-card:hover {
     transform: translateY(-10px);
 }
-.services-card:hover .card-img img{
+
+.services-card:hover .card-img img {
     transform: scale(1.1);
 }
 
 
 /* COLORS */
-.card-1 { background: rgb(8, 74, 118); }
-.card-2 { background: rgb(4, 99, 240); }
-.card-3 { background: rgb(29, 47, 73); }
-.card-4 { background: rgb(239, 110, 11); }
-.card-5 { background: rgb(4, 99, 240); }
-.card-6 { background: rgb(86, 72, 251); }
+.card-1 {
+    background: rgb(8, 74, 118);
+}
+
+.card-2 {
+    background: rgb(4, 99, 240);
+}
+
+.card-3 {
+    background: rgb(29, 47, 73);
+}
+
+.card-4 {
+    background: rgb(239, 110, 11);
+}
+
+.card-5 {
+    background: rgb(4, 99, 240);
+}
+
+.card-6 {
+    background: rgb(86, 72, 251);
+}
 
 /* IMAGE */
 .services-card .card-img img {
@@ -490,23 +585,26 @@ body{
 /* ===================================================   Cars by Category ================================================ */
 /* ===================================================   Cars by Category ================================================ */
 
-.cars-by-category{
+.cars-by-category {
     width: 67%;
     margin: auto;
     display: flex;
     flex-direction: column;
     background: linear-gradient(0deg, #e5f3ff, #fff);
 }
-.buttons{
+
+.buttons {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
 }
-.buttons div{
+
+.buttons div {
     width: 30%;
 }
-.buttons button{
+
+.buttons button {
     width: 100%;
     padding: 8px 40px;
     border-radius: 64px;
@@ -532,16 +630,18 @@ body{
     display: block;
 }
 
-.category-content img{
+.category-content img {
     width: 125px;
     height: 60px;
 }
-.content-card{
+
+.content-card {
     display: flex;
     justify-content: flex-start;
     gap: 35px;
 }
-.content-img{
+
+.content-img {
     width: 200px;
     height: 150px;
     border: 1px solid;
@@ -566,12 +666,14 @@ body{
     overflow-x: auto;
     padding-bottom: 10px;
 }
+
 .slider-2::-webkit-scrollbar {
     display: none;
 }
+
 .price-crad {
     height: 75px;
-    flex: 0 0 calc(25% - 5px);   
+    flex: 0 0 calc(25% - 5px);
     border-radius: 16px;
     display: flex;
     justify-content: center;
@@ -583,11 +685,13 @@ body{
     font-size: 18px;
     font-weight: 600;
 }
-.fuel-logo{
+
+.fuel-logo {
     display: flex;
     justify-content: space-around;
 }
-.logo{
+
+.logo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -599,10 +703,12 @@ body{
     border-radius: 16px;
     background-color: #fff;
 }
-.logo img{
+
+.logo img {
     width: 50px;
     height: 50px;
 }
+
 /* ============================================     Latest from autoverse ================================================= */
 /* ============================================     Latest from autoverse ================================================= */
 /* ============================================     Latest from autoverse ================================================= */
@@ -625,7 +731,8 @@ body{
 
 /* ===== CARD ===== */
 .slider-3-card {
-    flex: 0 0 400px; /* fixed card width */
+    flex: 0 0 400px;
+    /* fixed card width */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -647,16 +754,45 @@ body{
 }
 
 /* Image classes */
-.img1{ background-image: url(./assets/autoverse-img1.webp); }
-.img2{ background-image: url(./assets/autoverse-img2.webp); }
-.img3{ background-image: url(./assets/autoverse-img3.webp); }
-.img4{ background-image: url(./assets/autoverse-img4.webp); }
-.img5{ background-image: url(./assets/autoverse-img5.webp); }
-.img6{ background-image: url(./assets/autoverse-img6.webp); }
-.img7{ background-image: url(./assets/autoverse-img7.webp); }
-.img8{ background-image: url(./assets/autoverse-img8.webp); }
-.img9{ background-image: url(./assets/autoverse-img9.webp); }
-.img10{ background-image: url(./assets/autoverse-img10.webp); }
+.img1 {
+    background-image: url(./assets/autoverse-img1.webp);
+}
+
+.img2 {
+    background-image: url(./assets/autoverse-img2.webp);
+}
+
+.img3 {
+    background-image: url(./assets/autoverse-img3.webp);
+}
+
+.img4 {
+    background-image: url(./assets/autoverse-img4.webp);
+}
+
+.img5 {
+    background-image: url(./assets/autoverse-img5.webp);
+}
+
+.img6 {
+    background-image: url(./assets/autoverse-img6.webp);
+}
+
+.img7 {
+    background-image: url(./assets/autoverse-img7.webp);
+}
+
+.img8 {
+    background-image: url(./assets/autoverse-img8.webp);
+}
+
+.img9 {
+    background-image: url(./assets/autoverse-img9.webp);
+}
+
+.img10 {
+    background-image: url(./assets/autoverse-img10.webp);
+}
 
 /* ===== CONTENT ===== */
 .auto-content {
@@ -737,7 +873,7 @@ body{
 /* ====================================================  Download App =================================================== */
 /* ====================================================  Download App =================================================== */
 
-.Download{
+.Download {
     margin: auto;
     margin-top: 25px;
     border-radius: 30px;
@@ -750,85 +886,97 @@ body{
     justify-content: space-around;
     margin-bottom: 50px;
 }
-.right img{
+
+.right img {
     position: relative;
     top: 80px;
 }
-.Download p{
+
+.Download p {
     font-size: 28px;
     font-weight: 450;
     margin-bottom: 15px;
 }
-.left-top{
+
+.left-top {
     margin-bottom: 20px;
 }
-.right img{
+
+.right img {
     width: 325px;
     height: 255px;
 }
-.App-link{
+
+.App-link {
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: start;
 }
 
-.mobile-number{
+.mobile-number {
     border: 1px solid gray;
     height: min-content;
     display: flex;
     align-items: center;
     width: 300px;
     border-radius: 10px;
-    
+
 }
-.mobile-number span{
+
+.mobile-number span {
     font-size: 30px;
     font-weight: 550;
 }
 
-.mobile-number .india{
+.mobile-number .india {
     background-color: rgb(224, 224, 224);
     padding: 5px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.mobile-number input{
+
+.mobile-number input {
     font-size: 30px;
     padding: 5px;
     padding-left: 15px;
     font-weight: 550;
-    width:80%;
+    width: 80%;
     border: none;
     color: rgb(0, 0, 0);
 }
-.mobile-number input:focus{
+
+.mobile-number input:focus {
     border: none;
     outline: none;
 }
+
 .mobile-number input::placeholder {
     font-size: 30px;
     padding-left: 0px;
     font-weight: 550;
     color: rgb(229, 229, 229);
 }
-.download-logo{
+
+.download-logo {
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 15px;
 }
-.playstore img{
+
+.playstore img {
     width: 136px;
     height: 40px;
 }
-.qrcode img{
+
+.qrcode img {
     height: 94px;
     width: 94px;
 }
 
-.App-link button{
+.App-link button {
     padding: 10px;
     width: 300px;
     border-radius: 10px;
@@ -844,7 +992,7 @@ body{
 /* ==================================================  Motivate Us  ========================================================== */
 
 
-.Motivate{
+.Motivate {
     width: 64%;
     margin: auto;
     margin-top: 25px;
@@ -855,36 +1003,41 @@ body{
     flex-wrap: wrap;
     gap: 15px;
 }
-.rating{
+
+.rating {
     width: 20%;
     border: none;
 }
-.rating span{
+
+.rating span {
     font-size: 27px;
     font-weight: 600;
     color: #2f57b5;
-    
+
 }
-.rating p{
-    margin:20px 0px;
+
+.rating p {
+    margin: 20px 0px;
     font-size: 21px;
-    font-weight:650 ;
+    font-weight: 650;
 }
-.rating img{
+
+.rating img {
     margin-bottom: 10px;
 }
 
-.reviews{
+.reviews {
     width: 78%;
 }
-.slider-4{
+
+.slider-4 {
     display: flex;
     gap: 20px;
-    overflow-x: auto;          
+    overflow-x: auto;
     padding-bottom: 10px;
 }
 
-.reviw-card{
+.reviw-card {
     flex: 0 0 calc(40% - 5px);
     border-radius: 16px;
     display: flex;
@@ -894,25 +1047,28 @@ body{
     background: linear-gradient(to top, #ffffff, #eef5fe);
 }
 
-.reviewer{
+.reviewer {
     display: flex;
     align-items: center;
     font-weight: 650;
     gap: 15px;
     font-size: 16px;
 }
-.reviewer img{
+
+.reviewer img {
     width: 40px;
 }
+
 .user-review p {
     line-height: 28px;
 }
-.posted-date span{
+
+.posted-date span {
     font-size: 12px;
     color: gray;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -922,7 +1078,7 @@ body{
 /*  ==================================================   Need Help   ============================================================ */
 /*  ==================================================   Need Help   ============================================================ */
 
-.feedback{
+.feedback {
     width: 67%;
     margin: auto;
     margin-top: 10px;
@@ -932,7 +1088,8 @@ body{
     justify-content: space-between;
     padding: 25px;
 }
-.fd{
+
+.fd {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -943,15 +1100,18 @@ body{
     border-radius: 10px;
     font-family: var(--font);
 }
-.fd span{
+
+.fd span {
     font-weight: 600;
     margin-bottom: 10px;
 }
-.fd p{
+
+.fd p {
     font-size: 12px;
     color: gray;
 }
-.fd .fd-img{
+
+.fd .fd-img {
     display: flex;
     align-items: center;
 }
@@ -962,7 +1122,7 @@ body{
 /* =======================================================footer-para======================================================= */
 /* =======================================================footer-para======================================================= */
 
-.footer-para{
+.footer-para {
     font-family: var(--font);
     font-size: 13px;
     padding: 10px;
@@ -971,7 +1131,7 @@ body{
 }
 
 
-.footer{
+.footer {
     width: 80%;
     margin: auto;
     font-family: var(--font);
@@ -981,16 +1141,18 @@ body{
     gap: 35px;
 }
 
-.foot-1{
+.foot-1 {
     display: flex;
     align-items: center;
     margin-left: 40px;
 }
-.foot-1 img{
+
+.foot-1 img {
     width: 100px;
     padding-right: 15px;
 }
-.foot-1 p{
+
+.foot-1 p {
     font-size: 18px;
     font-weight: 600;
     color: rgb(88, 88, 88);
@@ -998,29 +1160,33 @@ body{
     border-left: 3px solid gray;
 }
 
-.foot-2{
+.foot-2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-.foot-2 li{
+
+.foot-2 li {
     list-style: none;
     line-height: 35px;
     color: gray;
     font-weight: 550;
-    
+
 }
-.social-icons{
+
+.social-icons {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 20px;
 }
-.icons img{
+
+.icons img {
     width: 40px;
     margin-right: 15px;
 }
-.foot-icon{
+
+.foot-icon {
     display: flex;
     flex-direction: column;
     gap: 20px;
