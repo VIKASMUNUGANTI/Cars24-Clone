@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyundai-Venue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #0a0f1c;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            position: sticky;
+            top: 0px;
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            z-index: 963;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue';
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        /* Main Layout */
+        .container {
+            display: flex;
+            gap: 40px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Left Image */
+        .product-image {
+            flex: 1.9;
+            animation-name: car-image;
+            animation-duration: 2s;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        @keyframes car-image {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        /* Right Info */
+        .product-info {
+            flex: 1;
+            animation-name: bullets-motion;
+            animation-duration: 0.5s;
+            margin-left: 30px;
+        }
+
+        .product-info li {
+            animation-name: bullets-motion;
+
+        }
+
+        .product-info li:nth-child(1) {
+            animation-duration: 0.5s;
+        }
+
+        .product-info li:nth-child(2) {
+            animation-duration: 0.7s;
+        }
+
+        .product-info li:nth-child(3) {
+            animation-duration: 0.9s;
+        }
+
+        .product-info li:nth-child(4) {
+            animation-duration: 1.1s;
+        }
+
+        .product-info li:nth-child(5) {
+            animation-duration: 1.5s;
+        }
+
+        @keyframes bullets-motion {
+            0% {
+                opacity: 0;
+                transform: translateX(250px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .product-info h1 {
+            font-family: 'Bebas Neue';
+            font-size: 3rem;
+            animation-name: top-scroll;
+            animation-duration: 2s;
+        }
+
+        .product-info p {
+            animation-name: top-scroll;
+            animation-duration: 2s;
+        }
+
+        @keyframes top-scroll {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .price {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #1a73e8;
+            animation-name: top-scroll;
+            animation-duration: 2s;
+        }
+
+        /* Highlights */
+        .highlights {
+            margin: 20px 0;
+
+        }
+
+        .highlights li {
+            margin-bottom: 10px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: orangered;
+            color: white;
+            display: inline-block;
+            margin-top: 10px;
+            transition: 0.5s;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: orange;
+        }
+
+        /* Section */
+        .section {
+            padding: 40px;
+        }
+
+        .specs {
+            padding: 60px 40px;
+        }
+
+        .specs h2 {
+            font-family: 'Bebas Neue';
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* GRID */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        /* CARD */
+        .spec-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-8px);
+            border-color: #00aaff;
+            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+        }
+
+        /* ICON */
+        .spec-card i {
+            font-size: 1.5rem;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+
+        /* TEXT */
+        .spec-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .spec-card p {
+            color: #aaa;
+        }
+
+        /* SPECIAL CARD */
+        .spec-card.highlight {
+            background: #00aaff;
+            color: white;
+        }
+
+        .spec-card.highlight p {
+            color: rgb(50, 50, 51);
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        /* Feature cards */
+        .features {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1 1 250px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            transition: .5s;
+        }
+
+        .card:hover {
+            box-shadow: 0px 0px 10px 1px rgb(251, 244, 244);
+            color: #1a73e8;
+            cursor: pointer;
+        }
+
+
+        .reviews {
+            padding: 60px 40px;
+        }
+
+        .reviews h2 {
+            font-family: 'Bebas Neue';
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* GRID */
+        .review-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* CARD */
+        .review-card {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+        }
+
+        /* TOP */
+        .review-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        /* TEXT */
+        .review-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* STARS */
+        .rating i {
+            color: gold;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+        }
+
+
+        /* Ratings */
+        .product-info .icons {
+            display: flex;
+        }
+
+        .product-info i {
+            font-size: 20px;
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"><a href="hyundai.html">Hyundai</a></div>
+        <ul class="nav-links">
+            <li><a href="hyundai.html">Hyundai </a></li>
+            <li><a href="../main.html">Cars24</a></li>
+            <li><a href="explore.html">Explore</a></li>
+        </ul>
+    </nav>
+
+    <!-- Product Section -->
+    <div class="container">
+
+        <!-- Image -->
+        <div class="product-image">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/197163/venue-exterior-left-rear-three-quarter.jpeg?isig=0&q=80" class="d-block w-100"
+                            alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://modihyundai.com/images/cars/venue/highlights/Exterior/ext-6.jpg"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/197163/venue-exterior-left-front-three-quarter.jpeg?isig=0&q=80&q=80"
+                            class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Info -->
+        <div class="product-info">
+            <h1>Venue
+                <div class="icons">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+
+            </h1>
+            <p>Premium Hatchback by Hyundai</p>
+
+            <div class="price">₹8L – ₹14L (Ex-showroom)</div>
+
+            <ul class="highlights">
+                <li>✔ 1.2L DualJet Petrol Engine</li>
+                <li>✔ Smart Hybrid Technology</li>
+                <li>✔ 22+ km/l Mileage</li>
+                <li>✔ 9-inch SmartPlay Pro+ Touchscreen</li>
+                <li>✔ 6 Airbags for Safety</li>
+            </ul>
+
+            <a href="#" class="btn">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <section class="section">
+        <h2>About Creta</h2>
+        <p>
+            The Hyundai Verna is one of the most stylish and performance-oriented sedans in its segment, designed to
+            deliver a perfect balance of elegance, technology, and driving excitement. With its bold and futuristic
+            design language, the Verna stands out through its sharp LED headlamps, signature connected DRLs, and
+            aerodynamic profile that enhances both aesthetics and efficiency. Inside, the cabin offers a premium
+            experience with high-quality materials, a dual-tone finish, and a wide integrated digital display that
+            combines the infotainment system and instrument cluster. The car is equipped with advanced features such as
+            a large touchscreen with wireless Android Auto and Apple CarPlay, ventilated front seats, a premium sound
+            system, ambient lighting, and a sunroof, making every drive comfortable and engaging.
+        </p>
+
+        <p>
+
+        </p>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+        <h2>Key Features</h2>
+
+        <div class="features">
+            <div class="card">
+                <h3>Performance</h3>
+                <p>Smooth and fuel-efficient 1.2L petrol engine for city and highway drives.</p>
+            </div>
+
+            <div class="card">
+                <h3>Technology</h3>
+                <p>Advanced infotainment system with Apple CarPlay & Android Auto.</p>
+            </div>
+
+            <div class="card">
+                <h3>Comfort</h3>
+                <p>Spacious cabin with premium seats and automatic climate control.</p>
+            </div>
+
+            <div class="card">
+                <h3>Safety</h3>
+                <p>Equipped with airbags, ABS, EBD, and rear parking camera.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="specs">
+        <h2>SPECIFICATIONS</h2>
+
+        <div class="specs-grid">
+
+            <div class="spec-card">
+                <i class="fa-solid fa-engine"></i>
+                <h3>Engine</h3>
+                <p>1.5L Turbo Petrol</p>
+            </div>
+
+            <div class="spec-card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <h3>Mileage</h3>
+                <p>20 km/l</p>
+            </div>
+
+            <div class="spec-card">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Transmission</h3>
+                <p>Manual / Automatic</p>
+            </div>
+
+            <div class="spec-card">
+                <i class="fa-solid fa-gas-pump"></i>
+                <h3>Fuel Type</h3>
+                <p>Petrol</p>
+            </div>
+
+            <div class="spec-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Seating</h3>
+                <p>5 Seater</p>
+            </div>
+
+            <div class="spec-card highlight">
+                <h3>Top Speed</h3>
+                <p>210 km/h</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>USER REVIEWS</h2>
+
+        <div class="review-container">
+
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-top">
+                    <h3>Rahul Sharma</h3>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+                <p>"The Hyundai Verna is super smooth and powerful. Loved the turbo engine and premium interior!"</p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-top">
+                    <h3>Anjali Verma</h3>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <p>"Best sedan in this price range. Features and comfort are next level!"</p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-top">
+                    <h3>Vikram Reddy</h3>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+                <p>"Great design and mileage. Could improve rear seat space slightly."</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        © 2025 Maruti Suzuki India Limited
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
