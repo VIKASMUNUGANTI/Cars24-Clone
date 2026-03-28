@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Cars — Maruti Suzuki</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a{
+            color: black;
+        }
+        /* ── Navbar ── */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 48px;
+            height: 68px;
+            background-color: transparent;
+            backdrop-filter: blur(18px);
+        }
+
+        .logo a {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-top: 15px;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 5px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border-radius: 7px;
+            transition: 1s;
+        }
+
+        .nav-links a:hover{
+            transform: translateY(-4px);
+            background-color: #0d1e36;
+            color: aliceblue;
+            
+        }
+
+        /* ── Hero ── */
+        .hero {
+            text-align: center;
+            padding: 72px 24px 48px;
+            animation: fadeDown 0.6s ease both;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .hero h2 em {
+            font-style: normal;
+            color: rgb(158, 158, 241);
+        }
+
+        .hero p {
+            margin-top: 16px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        /* ── Filters ── */
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 24px 40px;
+        }
+
+        .filter-btn {
+            padding: 9px 22px;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.22s, color 0.22s, border-color 0.22s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .filter-btn:hover {
+            border-color: rgba(255, 255, 255, 0.18);
+            background-color: rgba(255, 255, 255, 0.07);
+        }
+
+        /* ── Cars grid ── */
+        .cars-section {
+            padding: 0 40px 80px;
+        }
+
+        .cars-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ── Car card ── */
+        .car-card {
+            width: 30%;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(.22, .68, 0, 1.2),
+                box-shadow 0.3s ease,
+                border-color 0.3s;
+            animation: cardIn 0.55s ease both;
+        }
+
+        .car-card:nth-child(1) {
+            animation-delay: 0.10s;
+        }
+
+        .car-card:nth-child(2) {
+            animation-delay: 0.18s;
+        }
+
+        .car-card:nth-child(3) {
+            animation-delay: 0.26s;
+        }
+
+        .car-card:nth-child(4) {
+            animation-delay: 0.34s;
+        }
+
+        .car-card:nth-child(5) {
+            animation-delay: 0.42s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(0, 87, 184, 0.3);
+            border-color: rgba(0, 87, 184, 0.4);
+        }
+
+        /* ── Image wrapper ── */
+        .car-img-wrap {
+            position: relative;
+            overflow: hidden;
+            background-color: #0d1e36;
+            height: 210px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .car-img-wrap img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+            display: block;
+        }
+
+        .car-card:hover .car-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        /* ── Type badge ── */
+        .car-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background-color: rgba(232, 160, 32, 0.12);
+            border: 1px solid rgba(232, 160, 32, 0.25);
+            border-radius: 100px;
+            padding: 3px 10px;
+            backdrop-filter: blur(6px);
+        }
+
+        /* ── Card body ── */
+        .car-body {
+            padding: 20px 22px 22px;
+        }
+
+        .car-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.7rem;
+            letter-spacing: 1.5px;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .car-sub {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-bottom: 18px;
+        }
+
+        .car-divider {
+            height: 1px;
+            margin-bottom: 16px;
+        }
+
+        .car-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .car-price {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .car-price small {
+            font-size: 0.75rem;
+            font-weight: 400;
+            display: block;
+        }
+
+        .explore-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            background-color: rgba(26, 115, 232, 0.1);
+            border: 1px solid rgba(26, 115, 232, 0.2);
+            border-radius: 100px;
+            padding: 7px 14px;
+            cursor: pointer;
+            transition: background-color 0.22s, border-color 0.22s, color 0.22s;
+            letter-spacing: 0.3px;
+            text-decoration: none;
+        }
+
+
+
+        .explore-btn .arrow {
+            font-size: 1rem;
+            line-height: 1;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .explore-btn:hover .arrow {
+            transform: translateX(3px);
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Footer ── */
+        .footer-strip {
+            text-align: center;
+            padding: 28px;
+            font-size: 0.82rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .cars-section {
+                padding: 0 16px 60px;
+            }
+
+            .cars-grid {
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"><a href="suziki.html">Maruti Suzuki</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../main.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="#">Services</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-label">Our Lineup</div>
+        <h2>Find Your <em>Perfect</em> Drive</h2>
+        <p>Browse India's most loved cars — built for every road, every dream.</p>
+    </section>
+
+    <!-- Filters -->
+    <div class="filters">
+        <a class="filter-btn" href="#" style="border: 1px solid rgb(119, 119, 251);">All</a>
+        <a class="filter-btn" href="#">Hatchback</a>
+        <a class="filter-btn" href="#">SUV</a>
+        <a class="filter-btn" href="#">Sedan</a>
+        <a class="filter-btn" href="#">MPV</a>
+    </div>
+
+    <!-- Cars Grid -->
+    <section class="cars-section">
+        <div class="cars-grid">
+            <!-- Swift -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">Hatchback</span>
+                    <img src="https://cdn-s3.autocarindia.com/Maruti-Suzuki/Swift/_AAB1767.JPG?w=640"
+                        alt="Maruti Swift" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Swift</div>
+                    <div class="car-sub">Sporty · Fuel Efficient · City-Ready</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹6L – ₹9L <small>ex-showroom</small></div>
+                        <a href="swift.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baleno -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">Premium Hatchback</span>
+                    <img src="https://m.economictimes.com/thumb/msid-118134449,width-1200,height-900,resizemode-4,imgsize-65046/baleno.jpg"
+                        alt="Maruti Baleno" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Baleno</div>
+                    <div class="car-sub">Premium · Tech-Loaded · Stylish</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹7L – ₹10L <small>ex-showroom</small></div>
+                        <a href="baleno.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brezza -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">SUV</span>
+                    <img src="https://staticimg.amarujala.com/assets/images/2023/03/17/maruti-breeza-cng_1679046828.jpeg?q=80&w=480&dpr=2.6"
+                        alt="Maruti Brezza" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Brezza</div>
+                    <div class="car-sub">Bold · Adventure-Built · Connected</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹8L – ₹14L <small>ex-showroom</small></div>
+                        <a href="breeza.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ertiga -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">MPV</span>
+                    <img src="https://solutionpoints.co.in/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-28-at-10.38.45-AM.jpeg"
+                        alt="Maruti Ertiga" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Ertiga</div>
+                    <div class="car-sub">Family · 7-Seater · Spacious</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹9L – ₹13L <small>ex-showroom</small></div>
+                        <a href="ertiga.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dzire -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">Sedan</span>
+                    <img src="https://acko-cms.ackoassets.com/Maruti_Suzuki_Swift_Dzire_Static_6_5d2d38dbc0.jpg"
+                        alt="Maruti Dzire" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Dzire</div>
+                    <div class="car-sub">Elegant · Refined · Executive</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹7L – ₹10L <small>ex-showroom</small></div>
+                        <a href="#" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Jimny -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">Offroad</span>
+                    <img src="https://etimg.etb2bimg.com/photo/98963978.cms"
+                        alt="Maruti Swift" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Jimny</div>
+                    <div class="car-sub">Sporty · Fuel Efficient · City-Ready</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹6L – ₹9L <small>ex-showroom</small></div>
+                        <a href="swift.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invicto -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">Premium Hatchback</span>
+                    <img src="https://turbocharged.in/wp-content/uploads/2024/11/Maruti-Invicto-images-Website.jpg"
+                        alt="Maruti Baleno" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Invicto</div>
+                    <div class="car-sub">Premium · Tech-Loaded · Stylish</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹7L – ₹10L <small>ex-showroom</small></div>
+                        <a href="baleno.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ciaz -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">SUV</span>
+                    <img src="https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-97919461/97919461.jpg"
+                        alt="Maruti Brezza" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">CIAZ</div>
+                    <div class="car-sub">Bold · Adventure-Built · Connected</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹8L – ₹14L <small>ex-showroom</small></div>
+                        <a href="breeza.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Celerio -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">MPV</span>
+                    <img src="https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/53695/new-gen-celerio-exterior-left-front-three-quarter.jpeg?isig=0&q=80"
+                        alt="Maruti Ertiga" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Celerio</div>
+                    <div class="car-sub">Family · 7-Seater · Spacious</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹9L – ₹13L <small>ex-showroom</small></div>
+                        <a href="ertiga.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- s-presso -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">Sedan</span>
+                    <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/S-Presso/10347/1762859376235/front-left-side-47.jpg?imwidth=420&impolicy=resize"
+                        alt="Maruti Dzire" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">s-presso</div>
+                    <div class="car-sub">Elegant · Refined · Executive</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹7L – ₹10L <small>ex-showroom</small></div>
+                        <a href="#" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ignis -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">MPV</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/2018_Suzuki_Ignis_SZ5_SHVS_Allgrip_1.2_Front.jpg"
+                        alt="Maruti Ertiga" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Ignis</div>
+                    <div class="car-sub">Family · 7-Seater · Spacious</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹9L – ₹13L <small>ex-showroom</small></div>
+                        <a href="ertiga.html" target="_self" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wagon-r -->
+            <div class="car-card">
+                <div class="car-img-wrap">
+                    <span class="car-badge">Sedan</span>
+                    <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/112947/wagon-r-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80"
+                        alt="Maruti Dzire" />
+                </div>
+                <div class="car-body">
+                    <div class="car-name">Wagon-r</div>
+                    <div class="car-sub">Elegant · Refined · Executive</div>
+                    <div class="car-divider"></div>
+                    <div class="car-footer">
+                        <div class="car-price">₹7L – ₹10L <small>ex-showroom</small></div>
+                        <a href="#" class="explore-btn">View <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-strip">
+        © 2025 Maruti Suzuki India Limited. Prices are indicative and ex-showroom.
+    </footer>
+
+</body>
+
+</html>
