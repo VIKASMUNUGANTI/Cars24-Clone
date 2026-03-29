@@ -176,7 +176,8 @@ body {
     animation-name: container-motion;
     animation-duration: 1s;
 }
-.container .banner video{
+
+.container .banner video {
     z-index: -963;
 }
 
@@ -459,8 +460,10 @@ body {
     flex: 0 0 calc(31% - 5px);
     /* only 3 visible */
     border-radius: 16px;
+    height: 400px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     overflow: hidden;
     transition: 1.5s;
 }
@@ -1190,4 +1193,424 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+
+/* =============================================
+   RESPONSIVE ADDITIONS — no original code changed
+   ============================================= */
+
+/* ── Navbar ── */
+@media (max-width: 1024px) {
+    .navbar {
+        height: auto;
+        padding: 10px 12px;
+        gap: 6px;
+    }
+
+    .mainlogo img {
+        margin-left: 10px;
+    }
+
+    .left-nav-part {
+        margin-right: 12px;
+    }
+
+    .main-nav ul {
+        margin-right: 10px;
+        gap: 4px;
+    }
+
+    .main-nav ul li {
+        margin-right: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-dropdown {
+        display: none;
+    }
+
+    .call-button {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainlogo img {
+        margin-left: 4px;
+    }
+
+    .left-nav-part {
+        margin-right: 4px;
+    }
+}
+
+/* ── Section headings ── */
+@media (max-width: 768px) {
+    .h2 {
+        margin-left: 16px;
+        font-size: 22px;
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h2 {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+}
+
+/* ── Banner + content card ── */
+@media (max-width: 900px) {
+    .container .banner {
+        height: 300px;
+    }
+
+    .container .content {
+        width: 90%;
+        padding: 20px 24px;
+        margin-top: -80px;
+    }
+
+    .container .content .car-info {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .container .content .car-info .logo-car a {
+        width: 76px;
+        height: auto;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .logo-car a .image img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .brands {
+        gap: 8px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .container .banner {
+        height: 200px;
+    }
+
+    .container .content {
+        width: 95%;
+        padding: 16px 14px;
+        margin-top: -60px;
+    }
+
+    .brands button {
+        width: 130px;
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+}
+
+/* ── Our Services slider ── */
+@media (max-width: 900px) {
+    .our-sevices {
+        width: 92%;
+    }
+
+    .services-card {
+        flex: 0 0 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .our-sevices {
+        width: 96%;
+    }
+
+    .services-card {
+        flex: 0 0 220px;
+    }
+
+    .quote p {
+        font-size: 16px;
+        height: auto;
+    }
+}
+
+/* ── Cars by Category ── */
+@media (max-width: 900px) {
+    .cars-by-category {
+        width: 92%;
+    }
+
+    .buttons button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .logo {
+        padding: 20px 30px;
+        font-size: 16px;
+    }
+
+    .content-img {
+        width: 150px;
+        height: 120px;
+        font-size: 16px;
+    }
+
+    .category-content img {
+        width: 90px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cars-by-category {
+        width: 96%;
+    }
+
+    .buttons {
+        gap: 6px;
+    }
+
+    .buttons div {
+        width: 31%;
+    }
+
+    .buttons button {
+        padding: 6px 8px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .fuel-logo {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .logo {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+
+    .content-card {
+        gap: 12px;
+    }
+
+    .content-img {
+        width: 120px;
+        height: 100px;
+        font-size: 14px;
+    }
+}
+
+/* ── Autoverse ── */
+@media (max-width: 900px) {
+    .autoverse-card {
+        width: 92%;
+    }
+
+    .slider-3-card {
+        flex: 0 0 300px;
+    }
+
+    .autoverse-card .p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .autoverse-card {
+        width: 96%;
+    }
+
+    .slider-3-card {
+        flex: 0 0 260px;
+    }
+
+    .auto-img {
+        height: 160px;
+    }
+
+    .autoverse-card .p {
+        font-size: 15px;
+    }
+}
+
+/* ── Download App ── */
+@media (max-width: 900px) {
+    .Download {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .right {
+        display: none;
+    }
+
+    .Download p {
+        font-size: 22px;
+    }
+
+    .mobile-number {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .App-link button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .download-logo {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Download {
+        width: 95%;
+        padding: 20px 16px;
+    }
+
+    .Download p {
+        font-size: 18px;
+    }
+
+    .mobile-number input {
+        font-size: 20px;
+    }
+
+    .mobile-number input::placeholder {
+        font-size: 20px;
+    }
+
+    .mobile-number span {
+        font-size: 20px;
+    }
+
+    .playstore img {
+        width: 110px;
+        height: 34px;
+    }
+
+    .qrcode img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* ── Motivate Us ── */
+@media (max-width: 900px) {
+    .Motivate {
+        width: 92%;
+        flex-direction: column;
+    }
+
+    .rating {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .rating p {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .reviews {
+        width: 100%;
+    }
+
+    .reviw-card {
+        flex: 0 0 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Motivate {
+        width: 96%;
+    }
+
+    .reviw-card {
+        flex: 0 0 240px;
+    }
+}
+
+/* ── Need Help ── */
+@media (max-width: 900px) {
+    .feedback {
+        width: 92%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .fd {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback {
+        width: 96%;
+        padding: 12px;
+    }
+}
+
+/* ── Footer ── */
+@media (max-width: 900px) {
+    .footer {
+        width: 95%;
+    }
+
+    .foot-1 {
+        margin-left: 10px;
+    }
+
+    .foot-2 {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .foot-2>div {
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .foot-2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .foot-1 img {
+        width: 80px;
+    }
+
+    .foot-1 p {
+        font-size: 14px;
+    }
+
+    .icons img {
+        width: 32px;
+        margin-right: 10px;
+    }
 }
