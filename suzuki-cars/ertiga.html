@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baleno - Maruti Suzuki</title>
+    <title>Ertiga - Maruti Suzuki</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -64,38 +64,56 @@
         }
 
         @keyframes car-image {
-            0%{
+            0% {
                 opacity: 0;
                 transform: translateX(-50px);
             }
-            100%{
+
+            100% {
                 opacity: 1;
                 transform: translateX(0px);
             }
         }
+
         /* Right Info */
         .product-info {
             flex: 1;
             animation-name: bullets-motion;
             animation-duration: 0.5s;
         }
-        .product-info li{
+
+        .product-info li {
             animation-name: bullets-motion;
-            
+
         }
 
-        .product-info li:nth-child(1){ animation-duration: 0.5s; }
-        .product-info li:nth-child(2){ animation-duration: 0.7s; }
-        .product-info li:nth-child(3){ animation-duration: 0.9s; }
-        .product-info li:nth-child(4){ animation-duration: 1.1s; }
-        .product-info li:nth-child(5){ animation-duration: 1.5s; }
+        .product-info li:nth-child(1) {
+            animation-duration: 0.5s;
+        }
+
+        .product-info li:nth-child(2) {
+            animation-duration: 0.7s;
+        }
+
+        .product-info li:nth-child(3) {
+            animation-duration: 0.9s;
+        }
+
+        .product-info li:nth-child(4) {
+            animation-duration: 1.1s;
+        }
+
+        .product-info li:nth-child(5) {
+            animation-duration: 1.5s;
+        }
 
         @keyframes bullets-motion {
-            0%{
+            0% {
                 opacity: 0;
                 transform: translateX(250px);
             }
-            100%{
+
+            100% {
                 opacity: 1;
                 transform: translateX(0px);
             }
@@ -107,20 +125,24 @@
             animation-name: top-scroll;
             animation-duration: 2s;
         }
-        .product-info p{
+
+        .product-info p {
             animation-name: top-scroll;
             animation-duration: 2s;
         }
+
         @keyframes top-scroll {
-            0%{
+            0% {
                 opacity: 0;
                 transform: translateY(30px);
             }
-            100%{
+
+            100% {
                 opacity: 1;
                 transform: translateY(0px);
             }
         }
+
         .price {
             font-size: 1.5rem;
             margin: 10px 0;
@@ -132,7 +154,7 @@
         /* Highlights */
         .highlights {
             margin: 20px 0;
-            
+
         }
 
         .highlights li {
@@ -151,7 +173,7 @@
             font-weight: 600;
         }
 
-        .btn:hover{
+        .btn:hover {
             background-color: orange;
         }
 
@@ -197,6 +219,95 @@
             padding: 20px;
             font-size: 0.8rem;
         }
+
+        /* =============================================  RESPONSIVE ADDITIONS   ============================================= */
+
+        /* Navbar*/
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 14px 18px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: 0.85rem;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 24px 20px;
+                gap: 24px;
+            }
+
+            .product-image,
+            .product-info {
+                flex: unset;
+                width: 100%;
+            }
+
+            .product-info h1 {
+                font-size: 2.4rem;
+            }
+
+            .price {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px;
+            }
+
+            .product-info h1 {
+                font-size: 2rem;
+            }
+
+            .highlights li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Sections: tighter padding on mobile */
+        @media (max-width: 576px) {
+            .section {
+                padding: 24px 16px;
+            }
+
+            .section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 14px;
+            }
+        }
+
+        /* Feature cards: full-width on mobile */
+        @media (max-width: 480px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: unset;
+                width: 100%;
+            }
+        }
+
+        /* Table: smaller text and padding on mobile */
+        @media (max-width: 480px) {
+            td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 
@@ -217,7 +328,8 @@
 
         <!-- Image -->
         <div class="product-image">
-            <img src="https://solutionpoints.co.in/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-28-at-10.38.45-AM.jpeg">
+            <img
+                src="https://solutionpoints.co.in/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-28-at-10.38.45-AM.jpeg">
         </div>
 
         <!-- Info -->

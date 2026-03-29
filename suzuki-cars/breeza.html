@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baleno - Maruti Suzuki</title>
+    <title>Brezza - Maruti Suzuki</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -196,6 +196,95 @@
             text-align: center;
             padding: 20px;
             font-size: 0.8rem;
+        }
+
+                /* =============================================  RESPONSIVE ADDITIONS   ============================================= */
+
+        /* Navbar*/
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 14px 18px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: 0.85rem;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 24px 20px;
+                gap: 24px;
+            }
+
+            .product-image,
+            .product-info {
+                flex: unset;
+                width: 100%;
+            }
+
+            .product-info h1 {
+                font-size: 2.4rem;
+            }
+
+            .price {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px;
+            }
+
+            .product-info h1 {
+                font-size: 2rem;
+            }
+
+            .highlights li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Sections: tighter padding on mobile */
+        @media (max-width: 576px) {
+            .section {
+                padding: 24px 16px;
+            }
+
+            .section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 14px;
+            }
+        }
+
+        /* Feature cards: full-width on mobile */
+        @media (max-width: 480px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: unset;
+                width: 100%;
+            }
+        }
+
+        /* Table: smaller text and padding on mobile */
+        @media (max-width: 480px) {
+            td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
