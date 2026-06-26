@@ -451,14 +451,12 @@ body {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    /* enables horizontal scroll */
     padding-bottom: 10px;
 }
 
 /* CARD */
 .services-card {
     flex: 0 0 calc(31% - 5px);
-    /* only 3 visible */
     border-radius: 16px;
     height: 400px;
     display: flex;
